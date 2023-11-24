@@ -1,27 +1,20 @@
 import React from 'react';
 import './App.scss';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import StartPage from './pages/Start';
 import GamePage from './pages/Game';
 import FinalPage from './pages/Final';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <StartPage />,
-  },
-  {
-    path: '/game',
-    element: <GamePage />,
-  },
-  {
-    path: '/final',
-    element: <FinalPage />,
-  },
-]);
-
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<StartPage />} />
+        <Route path="/game" element={<GamePage />} />
+        <Route path="/final" element={<FinalPage />} />
+      </Routes>
+    </HashRouter>
+  );
 }
 
 export default App;
