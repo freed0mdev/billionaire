@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/billionaire/static/css/main.086632db.css",
-    "main.js": "/billionaire/static/js/main.0338fa76.js",
+    "main.js": "/billionaire/static/js/main.b824f071.js",
     "static/media/hero_creative.svg": "/billionaire/static/media/hero_creative.c9a005cb76cc1ac1a0ff07fe6c9a2c6a.svg",
     "static/media/close.svg": "/billionaire/static/media/close.e90c47312f4daa425bc1134dc682764c.svg",
     "static/media/menu.svg": "/billionaire/static/media/menu.0f42782e44021a0fedfb64e8f32b734e.svg",
@@ -11,10 +11,10 @@
     "static/media/step.svg": "/billionaire/static/media/step.5db441c9cae06954e52d86043faa2bdb.svg",
     "static/media/step_large.svg": "/billionaire/static/media/step_large.c023378ecfb1eebad75f306d8aa23d5f.svg",
     "main.086632db.css.map": "/billionaire/static/css/main.086632db.css.map",
-    "main.0338fa76.js.map": "/billionaire/static/js/main.0338fa76.js.map"
+    "main.b824f071.js.map": "/billionaire/static/js/main.b824f071.js.map"
   },
   "entrypoints": [
     "static/css/main.086632db.css",
-    "static/js/main.0338fa76.js"
+    "static/js/main.b824f071.js"
   ]
 }
