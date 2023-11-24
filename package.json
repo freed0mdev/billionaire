@@ -17,7 +17,7 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "start": "PUBLIC_URL=/ react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "lint": "eslint --ext .ts,.tsx src/",
