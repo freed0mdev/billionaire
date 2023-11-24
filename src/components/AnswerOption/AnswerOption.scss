@@ -5,6 +5,7 @@
 
 .option {
   align-items: center;
+  color: var(--color-option-stroke);
   cursor: pointer;
   display: flex;
   position: relative;
@@ -38,7 +39,6 @@
     --color-option-fill: var(--color-orange-5);
     --color-option-stroke: var(--color-orange-100);
 
-
     &:before,
     &:after {
       background-color: var(--color-orange-100);
@@ -46,18 +46,20 @@
   }
 
   &--correct {
+    color: var(--color-green-100);
     --color-option-fill: var(--color-green-5);
     --color-option-stroke: var(--color-green-100);
   }
 
   &--wrong {
+    color: var(--color-red-100);
     --color-option-fill: var(--color-red-5);
     --color-option-stroke: var(--color-red-100);
   }
 
   &:before,
   &:after {
-    background-color: var(--color-option-stroke);
+    background-color: currentColor;
     content: '';
     flex: 1;
     height: 1px;
@@ -78,6 +80,7 @@
     }
 
     &:not(.option--selected):hover {
+      color: var(--color-orange-100);
       --color-option-fill: var(--color-white);
       --color-option-stroke: var(--color-orange-100);
     }

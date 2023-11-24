@@ -1,14 +1,14 @@
 import './Game.scss';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
+import AnswersList from '../../components/AnswersList';
 import OpenMenuButton from '../../components/OpenMenu';
+import Question from '../../components/Question';
 import Sidebar from '../../components/Sidebar';
+import { AnswerResultParams, TQuestion } from '../../types';
 import { AnswerState } from '../../constants/enums';
 import { fetchQuestions } from '../../redux/questionsSlice';
 import { useAppDispatch, useAppSelector } from '../../customHooks/useStore';
-import Question from '../../components/Question';
-import AnswersList from '../../components/AnswersList';
-import { AnswerResultParams, TQuestion } from '../../types';
 
 const INITIAL_STATE = {
   currentQuestionIndex: 0,
@@ -37,7 +37,7 @@ function GamePage() {
     return <div>No questions available</div>;
   }
 
-  const onClickClose = useCallback(() => {
+  const handleCloseSidebar = useCallback(() => {
     setSidebarOpen(false);
   }, [setSidebarOpen]);
 
@@ -68,12 +68,17 @@ function GamePage() {
 
     setSelectedAnswer(currentQuestion.answers.indexOf(answer));
 
-    setTimeout(() => {
+    const showResultId = setTimeout(() => {
       handleCheckAnswer(isCorrect);
     }, 2000);
-    setTimeout(() => {
+    const showNextQuestionId = setTimeout(() => {
       handleAnswerResult({ isCorrect, currentQuestion, index: currentQuestionIndex });
     }, 3000);
+
+    return () => {
+      clearTimeout(showResultId);
+      clearTimeout(showNextQuestionId);
+    };
   }, [questions, currentQuestionIndex, handleCheckAnswer, handleAnswerResult]);
 
   if (getShouldRedirect(questions, currentQuestionIndex)) {
@@ -100,7 +105,7 @@ function GamePage() {
           </main>
           <Sidebar
             isOpen={isSidebarOpen}
-            onClose={onClickClose}
+            onClose={handleCloseSidebar}
             currentQuestionIndex={gameState.currentQuestionIndex}
           />
         </div>
