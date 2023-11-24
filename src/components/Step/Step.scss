@@ -1,0 +1,51 @@
+.step {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  &:before,
+  &:after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-black-40);
+  }
+
+  .step:not(.step--current) &__rect {
+    color: var(--color-black-40);
+  }
+
+  &__rect {
+    height: 32px;
+
+    &--desktop {
+      height: 40px;
+      display: none;
+    }
+
+    @media screen and (min-width: 1440px) {
+      display: none;
+
+      &--desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+  }
+
+  &--current {
+    color: var(--color-orange-100);
+
+    &:before,
+    &:after {
+      background-color: var(--color-orange-100);
+    }
+  }
+
+  &--finished {
+    color: var(--color-black-40);
+  }
+}

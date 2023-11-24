@@ -1,0 +1,114 @@
+:root {
+    --color-white: #FFFFFF;
+    --color-black-5: #F5F5F7;
+    --color-black-40: #D0D0D8;
+    --color-black-100: #1C1C21;
+
+    --color-orange-5: #FFF3EB;
+    --color-orange-80: #FFAC70;
+    --color-orange-100: #FF8B37;
+    --color-orange-120: #E87928;
+
+    --color-red-5: #FDEEED;
+    --color-red-100: #EC6259;
+
+    --color-green-5: #E6FAEA;
+    --color-green-100: #47D867;
+
+    --container-gap: 16px;
+
+    --button-border-radius: 8px;
+    --button-padding: 16px 24px;
+
+    --font-size-h1: 32px;
+    --font-size-h2: 18px;
+    --font-size-option: 14px;
+    --font-size-button: 14px;
+
+    @media screen and (min-width: 1440px) {
+        --button-border-radius: 12px;
+        --button-padding: 20px 24px;
+
+        --font-size-h1: 56px;
+        --font-size-h2: 32px;
+        --font-size-option: 20px;
+        --font-size-button: 20px;
+    }
+}
+
+#root {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    height: 100dvh;
+}
+
+main {
+    min-height: 100dvh;
+}
+
+.container {
+    margin-inline: auto;
+    max-width: 1440px;
+    padding: 0 var(--container-gap);
+}
+
+.h1 {
+    font-size: var(--font-size-h1);
+    margin: 0;
+}
+
+.h2 {
+    font-size: var(--font-size-h2);
+    font-weight: 600;
+    margin: 0;
+}
+
+.opacity-50 {
+    opacity: .5;
+}
+
+.button-reset {
+    align-items: center;
+    background: none;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.button {
+    background-color: var(--color-orange-100);
+    border-radius: var(--button-border-radius);
+    border: none;
+    color: var(--color-white);
+    font-size: var(--font-size-button);
+    font-weight: 600;
+    padding: var(--button-padding);
+    width: 288px;
+
+    &:active {
+        background-color: var(--color-orange-120);
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: 296px;
+
+        &:hover {
+            background-color: var(--color-orange-80);
+        }
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

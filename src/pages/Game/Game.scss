@@ -1,0 +1,58 @@
+.answers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: auto 0;
+  padding: 0;
+  row-gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen and (min-width: 1440px) {
+    row-gap: 32px;
+  }
+}
+
+.game-page {
+  background-color: var(--color-black-5);
+
+  &__wrapper {
+    @media screen and (min-width: 1440px) {
+      display: grid;
+      grid-template-columns: 1fr 376px;
+    }
+  }
+
+  &__header {
+    padding-block: var(--container-gap);
+    text-align: right;
+
+    @media screen and (min-width: 1440px) {
+      display: none;
+    }
+  }
+
+  &__question {
+    padding-inline: var(--container-gap);
+  }
+
+
+  @media screen and (min-width: 1440px) {
+
+    padding-block: 0;
+
+    &__question {
+      padding-inline: 0;
+    }
+  }
+}
+
+.game-menu-trigger {
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
+}
