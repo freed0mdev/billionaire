@@ -37,53 +37,44 @@ function GamePage() {
     return <div>No questions available</div>;
   }
 
-  const onClickClose = () => {
+  const onClickClose = useCallback(() => {
     setSidebarOpen(false);
-  };
+  }, [setSidebarOpen]);
 
   const handleOpenMenu = useCallback(() => {
     setSidebarOpen(true);
   }, [setSidebarOpen]);
 
-  const handleCheckAnswer = useCallback((correctIncluded: boolean) => () => {
+  const handleCheckAnswer = useCallback((correctIncluded: boolean) => {
     setSelectedAnswerState(correctIncluded ? AnswerState.CORRECT : AnswerState.INCORRECT);
   }, [setSelectedAnswerState]);
 
   const handleAnswerResult = useCallback(({
-    isCorrect,
-    currentQuestion,
+    isCorrect, currentQuestion,
     index,
-  }: AnswerResultParams) => () => {
-    if (isCorrect) {
-      setGameState({
-        ...gameState,
-        score: currentQuestion.price,
-        currentQuestionIndex: index + 1,
-      });
-    } else {
-      setGameState({
-        ...gameState,
-        currentQuestionIndex: questions.length,
-      });
-    }
-
+  }: AnswerResultParams) => {
+    setGameState((prevState) => ({
+      ...prevState,
+      score: isCorrect ? currentQuestion.price : prevState.score,
+      currentQuestionIndex: isCorrect ? index + 1 : questions.length,
+    }));
     setSelectedAnswerState(null);
     setSelectedAnswer(null);
-  }, [setSelectedAnswerState, setSelectedAnswer, setGameState, gameState]);
+  }, [setSelectedAnswerState, setSelectedAnswer, setGameState, questions]);
 
-  const handleAnswerOptionClick = useCallback((answer: string) => () => {
+  const handleAnswerSelect = useCallback((answer: string) => () => {
     const currentQuestion = questions[currentQuestionIndex];
     const isCorrect = currentQuestion.correctAnswers.includes(answer);
 
     setSelectedAnswer(currentQuestion.answers.indexOf(answer));
 
-    setTimeout(handleCheckAnswer(isCorrect), 2000);
-    setTimeout(handleAnswerResult({
-      isCorrect,
-      currentQuestion,
-      index: currentQuestionIndex,
-    }), 3000);
-  }, [gameState, questions, currentQuestionIndex, handleCheckAnswer, handleAnswerResult]);
+    setTimeout(() => {
+      handleCheckAnswer(isCorrect);
+    }, 2000);
+    setTimeout(() => {
+      handleAnswerResult({ isCorrect, currentQuestion, index: currentQuestionIndex });
+    }, 3000);
+  }, [questions, currentQuestionIndex, handleCheckAnswer, handleAnswerResult]);
 
   if (getShouldRedirect(questions, currentQuestionIndex)) {
     return <Navigate to="/final" state={{ score: gameState.score }} />;
@@ -93,13 +84,15 @@ function GamePage() {
     <div className="game-page">
       <div className="container">
         <div className="game-page__wrapper">
-          <header className="game-page__header"><OpenMenuButton onClick={handleOpenMenu} /></header>
+          <header className="game-page__header">
+            <OpenMenuButton onClick={handleOpenMenu} />
+          </header>
           <main className="game-page__main">
             <Question label={question} />
             {answers && (
             <AnswersList
               answersArray={answers}
-              handleAnswer={handleAnswerOptionClick}
+              onSelectAnswer={handleAnswerSelect}
               selectedIndex={selectedAnswer}
               selectedAnswerState={selectedAnswerState}
             />

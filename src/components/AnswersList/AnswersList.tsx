@@ -7,11 +7,11 @@ interface AnswersListProps {
   answersArray: string[],
   selectedIndex: number | null,
   selectedAnswerState: AnswerState | null,
-  handleAnswer: (answer: string) => () => void,
+  onSelectAnswer: (answer: string) => () => void,
 }
 
 function AnswersList({
-  answersArray, handleAnswer, selectedIndex, selectedAnswerState,
+  answersArray, onSelectAnswer, selectedIndex, selectedAnswerState,
 }: AnswersListProps) {
   return (
     <ul className="answers">
@@ -25,7 +25,7 @@ function AnswersList({
             selected={selectedIndex === index}
             label={label}
             text={answer}
-            onClick={handleAnswer(answer)}
+            onSelect={onSelectAnswer(answer)}
           />
         );
       })}

@@ -10,11 +10,11 @@ interface StepProps {
   label: string;
   selected: boolean;
   correct: AnswerState | null;
-  onClick: () => void;
+  onSelect: () => void;
 }
 
 function AnswerOption({
-  text, label, selected, correct, onClick,
+  text, label, selected, correct, onSelect,
 }: StepProps) {
   const optionClass = classNames('option', {
     'option--selected': selected,
@@ -24,7 +24,7 @@ function AnswerOption({
 
   return (
     <li>
-      <button type="button" className="button-reset" onClick={onClick}>
+      <button type="button" className="button-reset" onClick={onSelect}>
         <span className={optionClass}>
           <OptionRect className="option__rect" />
           <OptionRectDesktop className="option__rect option__rect--desktop" />
