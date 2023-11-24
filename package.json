@@ -2,6 +2,7 @@
   "name": "billionaire",
   "version": "0.1.0",
   "private": false,
+  "author": "Dmytro Ivashchenko",
   "homepage": "https://freed0mdev.github.io/billionaire",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
