@@ -29,6 +29,8 @@
         --button-border-radius: 12px;
         --button-padding: 20px 24px;
 
+        --container-gap: 0;
+
         --font-size-h1: 56px;
         --font-size-h2: 32px;
         --font-size-option: 20px;
@@ -36,23 +38,24 @@
     }
 }
 
-#root {
+html, body {
     height: 100%;
+    margin: 0;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    height: 100dvh;
 }
 
-main {
-    min-height: 100dvh;
+#root {
+    height: 100%;
 }
 
 .container {
     margin-inline: auto;
-    max-width: 1440px;
+    max-width: 100%;
     padding: 0 var(--container-gap);
+    width: 1440px;
 }
 
 .h1 {
@@ -77,29 +80,6 @@ main {
     display: inline-flex;
     justify-content: center;
     padding: 0;
-}
-
-.button {
-    background-color: var(--color-orange-100);
-    border-radius: var(--button-border-radius);
-    border: none;
-    color: var(--color-white);
-    font-size: var(--font-size-button);
-    font-weight: 600;
-    padding: var(--button-padding);
-    width: 288px;
-
-    &:active {
-        background-color: var(--color-orange-120);
-    }
-
-    @media screen and (min-width: 1440px) {
-        width: 296px;
-
-        &:hover {
-            background-color: var(--color-orange-80);
-        }
-    }
 }
 
 .sr-only {

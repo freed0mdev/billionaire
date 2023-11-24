@@ -1,7 +1,7 @@
 import './Game.scss';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import OpenMenu from '../../components/OpenMenu';
+import OpenMenuButton from '../../components/OpenMenu';
 import Sidebar from '../../components/Sidebar';
 import { AnswerState } from '../../constants/enums';
 import { fetchQuestions } from '../../redux/questionsSlice';
@@ -93,8 +93,8 @@ function GamePage() {
     <div className="game-page">
       <div className="container">
         <div className="game-page__wrapper">
-          <header className="game-page__header"><OpenMenu onClick={handleOpenMenu} /></header>
-          <main>
+          <header className="game-page__header"><OpenMenuButton onClick={handleOpenMenu} /></header>
+          <main className="game-page__main">
             <Question label={question} />
             {answers && (
             <AnswersList

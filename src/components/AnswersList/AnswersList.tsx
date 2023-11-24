@@ -1,5 +1,6 @@
 import React from 'react';
 import AnswerOption from '../AnswerOption';
+import './AnswersList.scss';
 import { AnswerState } from '../../constants/enums';
 
 interface AnswersListProps {

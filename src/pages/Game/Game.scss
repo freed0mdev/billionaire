@@ -1,58 +1,42 @@
-.answers {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: auto 0;
-  padding: 0;
-  row-gap: 8px;
-
-  @media screen and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media screen and (min-width: 1440px) {
-    row-gap: 32px;
-  }
-}
-
 .game-page {
   background-color: var(--color-black-5);
+  display: flex;
+  min-height: 100%;
 
   &__wrapper {
-    @media screen and (min-width: 1440px) {
-      display: grid;
-      grid-template-columns: 1fr 376px;
-    }
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   &__header {
     padding-block: var(--container-gap);
     text-align: right;
-
-    @media screen and (min-width: 1440px) {
-      display: none;
-    }
   }
 
-  &__question {
-    padding-inline: var(--container-gap);
+  &__main {
+    align-items: end;
+    display: grid;
+    flex: 1;
+    justify-items: center;
+    padding-block: 24px;
+    text-align: center;
   }
-
 
   @media screen and (min-width: 1440px) {
-
     padding-block: 0;
 
-    &__question {
-      padding-inline: 0;
+    &__header {
+      display: none;
     }
-  }
-}
 
-.game-menu-trigger {
-  @media screen and (min-width: 1440px) {
-    display: none;
+    &__main {
+      padding-block: 120px;
+    }
+
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 1fr 376px;
+    }
   }
 }

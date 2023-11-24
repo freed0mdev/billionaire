@@ -5,13 +5,13 @@ interface OpenMenuProps {
   onClick: () => void
 }
 
-function OpenMenu({ onClick } : OpenMenuProps) {
+function OpenMenuButton({ onClick } : OpenMenuProps) {
   return (
-    <button type="button" className="button-reset game-menu-trigger" onClick={onClick}>
+    <button type="button" className="button-reset" onClick={onClick}>
       <MenuSVG />
       <span className="sr-only">Open Menu</span>
     </button>
   );
 }
 
-export default OpenMenu;
+export default OpenMenuButton;

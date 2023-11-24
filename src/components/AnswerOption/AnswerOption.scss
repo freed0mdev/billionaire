@@ -16,14 +16,6 @@
       height: 72px;
       display: none;
     }
-
-    @media screen and (min-width: 1440px) {
-      display: none;
-
-      &--desktop {
-        display: block;
-      }
-    }
   }
 
   &__content {
@@ -72,8 +64,15 @@
     width: 17px;
   }
 
-
   @media screen and (min-width: 1440px) {
+    &__rect {
+      display: none;
+
+      &--desktop {
+        display: block;
+      }
+    }
+
     &__content {
       padding-inline: 32px;
     }

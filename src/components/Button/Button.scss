@@ -1,0 +1,22 @@
+.button {
+  background-color: var(--color-orange-100);
+  border-radius: var(--button-border-radius);
+  border: none;
+  color: var(--color-white);
+  font-size: var(--font-size-button);
+  font-weight: 600;
+  padding: var(--button-padding);
+  width: 288px;
+
+  &:active {
+    background-color: var(--color-orange-120);
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 296px;
+
+    &:hover {
+      background-color: var(--color-orange-80);
+    }
+  }
+}

@@ -1,3 +1,3 @@
-import OpenMenu from './OpenMenu';
+import OpenMenuButton from './OpenMenuButton';
 
-export default OpenMenu;
+export default OpenMenuButton;

@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import './Final.scss';
 import { ReactComponent as HeroCreative } from '../../assets/images/hero_creative.svg';
+import Button from '../../components/Button';
 
 function FinalPage() {
   const location = useLocation();
@@ -32,7 +33,7 @@ function FinalPage() {
                 earned
               </h1>
             </div>
-            <button type="button" className="button" onClick={onResetClick}>Try Again</button>
+            <Button onClick={onResetClick}>Try Again</Button>
           </div>
         </div>
       </div>

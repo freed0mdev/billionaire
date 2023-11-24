@@ -7,7 +7,7 @@ interface CloseMenuButtonProps {
 
 function CloseMenuButton({ onClick }: CloseMenuButtonProps) {
   return (
-    <button type="button" className="button-reset sidebar__close-trigger" onClick={onClick}>
+    <button type="button" className="button-reset" onClick={onClick}>
       <Close />
       <span className="sr-only">Close</span>
     </button>

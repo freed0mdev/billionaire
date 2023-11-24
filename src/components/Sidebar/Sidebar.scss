@@ -1,6 +1,21 @@
 .sidebar {
   background-color: var(--color-black-5);
 
+  &.active {
+    bottom: 0;
+    display: grid;
+    height: 100%;
+    left: 0;
+    overflow-x: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &.inactive {
+    display: none;
+  }
+
   &__header {
     padding: var(--container-gap);
     text-align: right;
@@ -10,34 +25,8 @@
     }
   }
 
-  &__reward-list {
-    padding: 0;
-    margin: auto 0;
-    list-style: none;
-    display: flex;
-    gap: 8px;
-    flex-direction: column-reverse;
-  }
-
-  &__close-trigger {
-    @media screen and (min-width: 1440px) {
-      display: none;
-    }
-  }
-
-  &.active {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: grid;
-    height: 100%;
-    overflow-x: auto;
-  }
-
-  &.inactive {
-    display: none;
+  &__content {
+    padding-block: 24px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -50,6 +39,10 @@
 
     &.inactive {
       display: grid;
+    }
+
+    &__content {
+      padding-block: 120px;
     }
   }
 }

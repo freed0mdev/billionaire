@@ -5,10 +5,10 @@
 
   &:before,
   &:after {
+    background-color: var(--color-black-40);
     content: '';
     flex: 1;
     height: 1px;
-    background-color: var(--color-black-40);
   }
 
   .step:not(.step--current) &__rect {
@@ -21,14 +21,6 @@
     &--desktop {
       height: 40px;
       display: none;
-    }
-
-    @media screen and (min-width: 1440px) {
-      display: none;
-
-      &--desktop {
-        display: block;
-      }
     }
   }
 
@@ -47,5 +39,15 @@
 
   &--finished {
     color: var(--color-black-40);
+  }
+
+  @media screen and (min-width: 1440px) {
+    &__rect {
+      display: none;
+
+      &--desktop {
+        display: block;
+      }
+    }
   }
 }
