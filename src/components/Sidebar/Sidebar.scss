@@ -19,19 +19,20 @@
   &__header {
     padding: var(--container-gap);
     text-align: right;
-
-    @media screen and (min-width: 1440px) {
-      display: none;
-    }
   }
 
   &__content {
+    display: grid;
     padding-block: 24px;
   }
 
   @media screen and (min-width: 1440px) {
     background: var(--color-white);
     width: 376px;
+
+    &__header {
+      display: none;
+    }
 
     &.active {
       position: static;
