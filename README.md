@@ -31,24 +31,17 @@ Billionaire Game is a React web application that implements a basic version of t
    npm start
    ```
 
-2. **Make Changes:**
-
-   Edit the source code in the `src` directory.
-
-3. **Commit Changes:**
-
-   ```bash
-   git add .
-   git commit -m "Your commit message"
-   ```
+2. **Commit Changes:**
 
    Husky will run pre-commit hooks, including linting.
-4. **Commit Changes:**
 
+3. **Push Changes:**
 
-## Deploy
+   Husky will run pre-push hooks, including unit-testing.
+
+4. **Deploy Changes:**
+
    ```bash
    npm run deploy
    ```
-
    Deploy the app to GitHub Pages when ready.

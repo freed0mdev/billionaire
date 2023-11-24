@@ -14,22 +14,24 @@ function AnswersList({
   answersArray, onSelectAnswer, selectedIndex, selectedAnswerState,
 }: AnswersListProps) {
   return (
-    <ul className="answers">
-      {answersArray?.map((answer, index) => {
-        const label = String.fromCharCode('A'.charCodeAt(0) + index);
+    <form>
+      <ul className="answers">
+        {answersArray?.map((answer, index) => {
+          const label = String.fromCharCode('A'.charCodeAt(0) + index);
 
-        return (
-          <AnswerOption
-            key={`_key${answer}`}
-            correct={selectedAnswerState}
-            selected={selectedIndex === index}
-            label={label}
-            text={answer}
-            onSelect={onSelectAnswer(answer)}
-          />
-        );
-      })}
-    </ul>
+          return (
+            <AnswerOption
+              key={`_key${answer}`}
+              correct={selectedAnswerState}
+              selected={selectedIndex === index}
+              label={label}
+              text={answer}
+              onSelect={onSelectAnswer(answer)}
+            />
+          );
+        })}
+      </ul>
+    </form>
   );
 }
 

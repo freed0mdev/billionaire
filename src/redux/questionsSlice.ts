@@ -10,8 +10,8 @@ const questionMock = [
   },
   {
     question: 'Which planet is known as the Red Planet?',
-    answers: ['Earth', 'Mars', 'Venus', 'Jupiter'],
-    correctAnswers: ['Mars'],
+    answers: ['Earth', 'Mars', 'Venus', 'Jupiter', 'Sun'],
+    correctAnswers: ['Mars', 'Sun'],
     price: 1000,
   },
   {
@@ -77,8 +77,7 @@ const questionMock = [
 ];
 
 const initialState: GameState = {
-  questions: []
-  ,
+  questions: [],
 };
 
 export const fetchQuestions = createAsyncThunk('game/fetchQuestions', async (_, thunkAPI) => {

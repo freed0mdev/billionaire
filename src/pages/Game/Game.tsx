@@ -20,22 +20,18 @@ function getShouldRedirect(questions: TQuestion[], currentQuestionIndex: number)
 }
 
 function GamePage() {
+  const dispatch = useAppDispatch();
+  const { questions } = useAppSelector((state) => state.questions);
   const [gameState, setGameState] = useState(INITIAL_STATE);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [selectedAnswerState, setSelectedAnswerState] = useState<AnswerState | null>(null);
-  const dispatch = useAppDispatch();
-  const { questions } = useAppSelector((state) => state.questions);
   const { currentQuestionIndex } = gameState;
   const { question, answers } = questions[currentQuestionIndex] || {};
 
   useEffect(() => {
     dispatch(fetchQuestions());
   }, [fetchQuestions]);
-
-  if (!questions) {
-    return <div>No questions available</div>;
-  }
 
   const handleCloseSidebar = useCallback(() => {
     setSidebarOpen(false);
@@ -50,7 +46,8 @@ function GamePage() {
   }, [setSelectedAnswerState]);
 
   const handleAnswerResult = useCallback(({
-    isCorrect, currentQuestion,
+    isCorrect,
+    currentQuestion,
     index,
   }: AnswerResultParams) => {
     setGameState((prevState) => ({
@@ -80,6 +77,10 @@ function GamePage() {
       clearTimeout(showNextQuestionId);
     };
   }, [questions, currentQuestionIndex, handleCheckAnswer, handleAnswerResult]);
+
+  if (!questions || !questions.length) {
+    return <div>No questions available</div>;
+  }
 
   if (getShouldRedirect(questions, currentQuestionIndex)) {
     return <Navigate to="/final" state={{ score: gameState.score }} />;

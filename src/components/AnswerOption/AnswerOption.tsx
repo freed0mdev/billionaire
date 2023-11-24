@@ -24,7 +24,8 @@ function AnswerOption({
 
   return (
     <li>
-      <button type="button" className="button-reset" onClick={onSelect}>
+      <label htmlFor={`label_${text}`}>
+        <input type="radio" name="answer" hidden id={`label_${text}`} onClick={onSelect} />
         <span className={optionClass}>
           <OptionRect className="option__rect" />
           <OptionRectDesktop className="option__rect option__rect--desktop" />
@@ -33,7 +34,7 @@ function AnswerOption({
             {text}
           </div>
         </span>
-      </button>
+      </label>
     </li>
   );
 }
