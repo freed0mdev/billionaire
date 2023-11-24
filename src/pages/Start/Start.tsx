@@ -3,6 +3,7 @@ import './Start.scss';
 import { useNavigate } from 'react-router-dom';
 import { ReactComponent as HeroCreative } from '../../assets/images/hero_creative.svg';
 import Button from '../../components/Button';
+import HeroLayout from '../../components/HeroLayout';
 
 function StartPage() {
   const navigate = useNavigate();
@@ -14,14 +15,11 @@ function StartPage() {
   return (
     <main className="start-page">
       <div className="container">
-        <div className="start-page__hero-container">
-          <div className="start-page__hero-image">
-            <HeroCreative className="start-page__hero-creative" />
-          </div>
-          <div className="start-page__hero-cta">
+        <div className="start-page__content">
+          <HeroLayout imageElement={<HeroCreative />}>
             <h1 className="h1">Who wants to be a millionaire?</h1>
             <Button onClick={onStartClick}>Start</Button>
-          </div>
+          </HeroLayout>
         </div>
       </div>
     </main>
