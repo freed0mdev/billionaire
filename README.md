@@ -1,8 +1,8 @@
-# Billionaire Game
+# Millionaire Game
 
 ## Overview
 
-Billionaire Game is a React web application that implements a basic version of the "Who Wants to Be a Millionaire" game. It allows players to answer a series of questions, accumulate winnings for correct answers, and view their total score at the end.
+Millionaire Game is a React web application that implements a basic version of the "Who Wants to Be a Millionaire" game. It allows players to answer a series of questions, accumulate winnings for correct answers, and view their total score at the end.
 
 ## Project Setup
 

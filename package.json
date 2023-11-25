@@ -1,9 +1,9 @@
 {
-  "name": "billionaire",
+  "name": "millionaire",
   "version": "0.1.0",
   "private": false,
   "author": "Dmytro Ivashchenko",
-  "homepage": "https://freed0mdev.github.io/billionaire",
+  "homepage": "https://freed0mdev.github.io/millionaire",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
