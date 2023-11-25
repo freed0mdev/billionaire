@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/billionaire/static/css/main.da762fba.css",
-    "main.js": "/billionaire/static/js/main.a475f2ef.js",
-    "static/media/hero_creative.svg": "/billionaire/static/media/hero_creative.c9a005cb76cc1ac1a0ff07fe6c9a2c6a.svg",
-    "static/media/close.svg": "/billionaire/static/media/close.e90c47312f4daa425bc1134dc682764c.svg",
-    "static/media/menu.svg": "/billionaire/static/media/menu.0f42782e44021a0fedfb64e8f32b734e.svg",
-    "index.html": "/billionaire/index.html",
-    "static/media/option.svg": "/billionaire/static/media/option.e369591d4f3b499fa35aab983dad126b.svg",
-    "static/media/option_large.svg": "/billionaire/static/media/option_large.b47a6a0280e0c3d9d89b6f53c2d7f606.svg",
-    "static/media/step.svg": "/billionaire/static/media/step.5db441c9cae06954e52d86043faa2bdb.svg",
-    "static/media/step_large.svg": "/billionaire/static/media/step_large.c023378ecfb1eebad75f306d8aa23d5f.svg",
-    "main.da762fba.css.map": "/billionaire/static/css/main.da762fba.css.map",
-    "main.a475f2ef.js.map": "/billionaire/static/js/main.a475f2ef.js.map"
+    "main.css": "/millionaire/static/css/main.da762fba.css",
+    "main.js": "/millionaire/static/js/main.54ca0e7b.js",
+    "static/media/hero_creative.svg": "/millionaire/static/media/hero_creative.c9a005cb76cc1ac1a0ff07fe6c9a2c6a.svg",
+    "static/media/close.svg": "/millionaire/static/media/close.e90c47312f4daa425bc1134dc682764c.svg",
+    "static/media/menu.svg": "/millionaire/static/media/menu.0f42782e44021a0fedfb64e8f32b734e.svg",
+    "index.html": "/millionaire/index.html",
+    "static/media/option.svg": "/millionaire/static/media/option.e369591d4f3b499fa35aab983dad126b.svg",
+    "static/media/option_large.svg": "/millionaire/static/media/option_large.b47a6a0280e0c3d9d89b6f53c2d7f606.svg",
+    "static/media/step.svg": "/millionaire/static/media/step.5db441c9cae06954e52d86043faa2bdb.svg",
+    "static/media/step_large.svg": "/millionaire/static/media/step_large.c023378ecfb1eebad75f306d8aa23d5f.svg",
+    "main.da762fba.css.map": "/millionaire/static/css/main.da762fba.css.map",
+    "main.54ca0e7b.js.map": "/millionaire/static/js/main.54ca0e7b.js.map"
   },
   "entrypoints": [
     "static/css/main.da762fba.css",
-    "static/js/main.a475f2ef.js"
+    "static/js/main.54ca0e7b.js"
   ]
 }
