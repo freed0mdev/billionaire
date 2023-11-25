@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import classNames from 'classnames';
-import { ReactComponent as StepRectSVG } from '../../assets/images/step.svg';
-import { ReactComponent as StepRectDesktopSVG } from '../../assets/images/step_large.svg';
-import { StepState } from '../../constants/enums';
-import './Step.scss';
+import { StepState } from 'src/constants/enums';
+import { ReactComponent as StepRectSVG } from 'src/assets/images/step.svg';
+import { ReactComponent as StepRectDesktopSVG } from 'src/assets/images/step_large.svg';
+import 'src/components/Step/Step.scss';
 
 interface StepProps {
   children: ReactNode;

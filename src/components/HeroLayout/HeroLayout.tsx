@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import './HeroLayout.scss';
+import 'src/components/HeroLayout/HeroLayout.scss';
 
 interface HeroLayoutProps {
   children: ReactNode;

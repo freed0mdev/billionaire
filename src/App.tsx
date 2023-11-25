@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.scss';
+import 'src/App.scss';
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import StartPage from './pages/Start';
-import GamePage from './pages/Game';
-import FinalPage from './pages/Final';
+import StartPage from 'src/pages/Start';
+import GamePage from 'src/pages/Game';
+import FinalPage from 'src/pages/Final';
 
 function App() {
   return (

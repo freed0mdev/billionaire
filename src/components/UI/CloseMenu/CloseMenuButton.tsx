@@ -1,5 +1,5 @@
 import React, { MouseEventHandler } from 'react';
-import { ReactComponent as Close } from '../../assets/images/icons/close.svg';
+import { ReactComponent as Close } from 'src/assets/images/icons/close.svg';
 
 interface CloseMenuButtonProps {
   onClick: MouseEventHandler<HTMLButtonElement>

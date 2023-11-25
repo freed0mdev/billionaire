@@ -1,3 +1,3 @@
-import RewardList from './RewardList';
+import RewardList from 'src/components/RewardList/RewardList';
 
 export default RewardList;

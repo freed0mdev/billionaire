@@ -1,7 +1,8 @@
 import React from 'react';
-import AnswerOption from '../AnswerOption';
-import './AnswersList.scss';
-import { AnswerState } from '../../constants/enums';
+import { AnswerState } from 'src/constants/enums';
+import { getAnswerOptionLabel } from 'src/components/AnswersList/utils';
+import AnswerOption from 'src/components/AnswerOption';
+import 'src/components/AnswersList/AnswersList.scss';
 
 interface AnswersListProps {
   answersArray: string[],
@@ -13,23 +14,25 @@ interface AnswersListProps {
 function AnswersList({
   answersArray, onSelectAnswer, selectedIndex, selectedAnswerState,
 }: AnswersListProps) {
+  const renderAnswerOption = (answer: string, index: number) => {
+    const label = getAnswerOptionLabel(index);
+
+    return (
+      <AnswerOption
+        key={`_key${answer}`}
+        correct={selectedAnswerState}
+        selected={selectedIndex === index}
+        label={label}
+        text={answer}
+        onSelect={onSelectAnswer(answer)}
+      />
+    );
+  };
+
   return (
     <form>
       <ul className="answers">
-        {answersArray?.map((answer, index) => {
-          const label = String.fromCharCode('A'.charCodeAt(0) + index);
-
-          return (
-            <AnswerOption
-              key={`_key${answer}`}
-              correct={selectedAnswerState}
-              selected={selectedIndex === index}
-              label={label}
-              text={answer}
-              onSelect={onSelectAnswer(answer)}
-            />
-          );
-        })}
+        {answersArray?.map(renderAnswerOption)}
       </ul>
     </form>
   );

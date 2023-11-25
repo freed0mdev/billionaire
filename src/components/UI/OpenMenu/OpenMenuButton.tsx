@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as MenuSVG } from '../../assets/images/icons/menu.svg';
+import { ReactComponent as MenuSVG } from 'src/assets/images/icons/menu.svg';
 
 interface OpenMenuProps {
   onClick: () => void

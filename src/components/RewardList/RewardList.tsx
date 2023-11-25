@@ -1,11 +1,11 @@
 import React from 'react';
-import './RewardList.scss';
-import { StepState } from '../../constants/enums';
-import Step from '../Step';
-import { TQuestion } from '../../types';
+import 'src/components/RewardList/RewardList.scss';
+import { useAppSelector } from 'src/customHooks/useStore';
+import { TQuestion } from 'src/types';
+import { StepState } from 'src/constants/enums';
+import Step from 'src/components/Step';
 
 interface RewardListProps {
-  questions: TQuestion[],
   currentQuestionIndex: number
 }
 
@@ -20,10 +20,12 @@ function getStateNames(index: number, currentIndex: number): StepState | null {
   return null;
 }
 
-function RewardList({ questions, currentQuestionIndex }: RewardListProps) {
+function RewardList({ currentQuestionIndex }: RewardListProps) {
+  const { questions } = useAppSelector((state) => state.questions);
+
   return (
     <ul className="reward-list">
-      {questions?.map(({ question, price }, index) => (
+      {questions?.map(({ question, price }: TQuestion, index: number) => (
         <li key={question}>
           <Step state={getStateNames(index, currentQuestionIndex)}>
             $

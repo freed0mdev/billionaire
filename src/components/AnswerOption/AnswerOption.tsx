@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import './AnswerOption.scss';
-import { AnswerState } from '../../constants/enums';
-import { ReactComponent as OptionRect } from '../../assets/images/option.svg';
-import { ReactComponent as OptionRectDesktop } from '../../assets/images/option_large.svg';
+import 'src/components/AnswerOption/AnswerOption.scss';
+import { AnswerState } from 'src/constants/enums';
+import { ReactComponent as OptionRect } from 'src/assets/images/option.svg';
+import { ReactComponent as OptionRectDesktop } from 'src/assets/images/option_large.svg';
 
 interface StepProps {
   text: string;

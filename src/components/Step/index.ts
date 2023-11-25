@@ -1,3 +1,3 @@
-import Step from './Step';
+import Step from 'src/components/Step/Step';
 
 export default Step;

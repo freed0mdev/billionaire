@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { GameState } from '../types';
+import { GameState } from 'src/types';
 
 const questionMock = [
   {
@@ -82,8 +82,6 @@ const initialState: GameState = {
 
 export const fetchQuestions = createAsyncThunk('game/fetchQuestions', async (_, thunkAPI) => {
   try {
-    // const response = await fetch('questions.json');
-
     return questionMock;
   } catch (error) {
     return thunkAPI.rejectWithValue(error);

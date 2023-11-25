@@ -1,3 +1,3 @@
-import HeroLayout from './HeroLayout';
+import HeroLayout from 'src/components/HeroLayout/HeroLayout';
 
 export default HeroLayout;

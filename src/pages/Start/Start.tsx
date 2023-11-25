@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
-import './Start.scss';
+import 'src/pages/Start/Start.scss';
 import { useNavigate } from 'react-router-dom';
-import { ReactComponent as HeroCreative } from '../../assets/images/hero_creative.svg';
-import Button from '../../components/Button';
-import HeroLayout from '../../components/HeroLayout';
+import { ReactComponent as HeroCreative } from 'src/assets/images/hero_creative.svg';
+import Button from 'src/components/UI/Button';
+import HeroLayout from 'src/components/HeroLayout';
 
 function StartPage() {
   const navigate = useNavigate();

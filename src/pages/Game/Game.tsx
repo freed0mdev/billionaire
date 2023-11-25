@@ -1,14 +1,15 @@
-import './Game.scss';
+import 'src/pages/Game/Game.scss';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import AnswersList from '../../components/AnswersList';
-import OpenMenuButton from '../../components/OpenMenu';
-import Question from '../../components/Question';
-import Sidebar from '../../components/Sidebar';
-import { AnswerResultParams, TQuestion } from '../../types';
-import { AnswerState } from '../../constants/enums';
-import { fetchQuestions } from '../../redux/questionsSlice';
-import { useAppDispatch, useAppSelector } from '../../customHooks/useStore';
+import RewardList from 'src/components/RewardList';
+import AnswersList from 'src/components/AnswersList';
+import OpenMenuButton from 'src/components/UI/OpenMenu';
+import Question from 'src/components/Question';
+import Sidebar from 'src/components/UI/Sidebar';
+import { AnswerResultParams, TQuestion } from 'src/types';
+import { AnswerState } from 'src/constants/enums';
+import { fetchQuestions } from 'src/redux/questionsSlice';
+import { useAppDispatch, useAppSelector } from 'src/customHooks/useStore';
 
 const INITIAL_STATE = {
   currentQuestionIndex: 0,
@@ -107,7 +108,7 @@ function GamePage() {
           <Sidebar
             isOpen={isSidebarOpen}
             onClose={handleCloseSidebar}
-            currentQuestionIndex={gameState.currentQuestionIndex}
+            content={<RewardList currentQuestionIndex={currentQuestionIndex} />}
           />
         </div>
       </div>

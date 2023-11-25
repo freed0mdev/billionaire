@@ -1,3 +1,3 @@
-import StartPage from './Start';
+import StartPage from 'src/pages/Start/Start';
 
 export default StartPage;
